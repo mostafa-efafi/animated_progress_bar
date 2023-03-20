@@ -5,13 +5,15 @@ class View extends StatelessWidget {
   final double fraction;
   final double staticFraction;
   final double? stroke;
+  final Color? color;
   final PaintingStyle? style;
   const View(
       {Key? key,
       required this.fraction,
       required this.staticFraction,
       this.stroke,
-      this.style})
+      this.style,
+      this.color})
       : super(key: key);
 
   @override
@@ -24,7 +26,7 @@ class View extends StatelessWidget {
             children: [
               CustomPaint(
                 painter: CircleShape(
-                    color: Colors.red,
+                    color: color,
                     stroke: stroke ?? 10,
                     style: style ?? PaintingStyle.stroke,
                     fraction: fraction,

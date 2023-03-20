@@ -18,16 +18,55 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Animated ProgressBar Example'),
         ),
-        body: const Center(
-          child: SizedBox(
-              height: 200,
-              width: 200,
-              child: AnimatedProgressBar(
-                stroke: 30,
-                style: PaintingStyle.stroke,
-              )),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: const [
+                  SizedBox(
+                      height: 150,
+                      width: 150,
+                      child: AnimatedProgressBar(
+                        stroke: 20,
+                        color: Colors.purple,
+                        style: PaintingStyle.stroke,
+                      )),
+                  SizedBox(
+                      height: 150,
+                      width: 150,
+                      child: AnimatedProgressBar(
+                        stroke: 12,
+                        style: PaintingStyle.stroke,
+                      )),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: const [
+                  SizedBox(
+                      height: 150,
+                      width: 150,
+                      child: AnimatedProgressBar(
+                        stroke: 7,
+                        color: Colors.cyan,
+                        style: PaintingStyle.stroke,
+                      )),
+                  SizedBox(
+                      height: 150,
+                      width: 150,
+                      child: AnimatedProgressBar(
+                        color: Colors.orange,
+                        style: PaintingStyle.fill,
+                      )),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

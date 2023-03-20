@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class AnimatedProgressBar extends StatefulWidget {
   final double? stroke;
   final PaintingStyle? style;
-  const AnimatedProgressBar({Key? key, this.stroke, this.style})
+  final Color? color;
+  const AnimatedProgressBar({Key? key, this.stroke, this.style, this.color})
       : super(key: key);
 
   @override
@@ -80,6 +81,7 @@ class _AnimatedProgressBarState extends State<AnimatedProgressBar>
   @override
   Widget build(BuildContext context) {
     return View(
+      color: widget.color,
       style: widget.style,
       staticFraction: _staticFraction,
       fraction: _fraction,
