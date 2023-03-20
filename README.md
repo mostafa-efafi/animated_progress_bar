@@ -1,15 +1,55 @@
-# animated_progress_bar
+## Animated Progress Bar
+A Flutter plugin to show animated progress bar with customization styles. 
 
-A new Flutter plugin project.
+![](demo.gif)
 
-## Getting Started
+### Getting Started
+In order to use this package, do import
+```dart
+import 'package:animated_progress_bar/animated_progress_bar.dart';
+```
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+Basic implementation can be done like below code:
+```dart
+import 'package:animated_progress_bar/animated_progress_bar.dart';
+import 'package:flutter/material.dart';
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+void main() {
+  runApp(const MyApp());
+}
 
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Animated ProgressBar Example'),
+        ),
+        body: const SizedBox(
+                      height: 150,
+                      width: 150,
+                      child: AnimatedProgressBar(
+                        stroke: 7,
+                        color: Colors.cyan,
+                        style: PaintingStyle.stroke,
+                      ))
+      ),
+    );
+  }
+}
+```
+
+### License
+MIT
+
+### About
+Built with <3   
+by Mostafa Efafi  
