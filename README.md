@@ -9,7 +9,7 @@ In order to use this package, do import
 import 'package:animated_progress_bar/animated_progress_bar.dart';
 ```
 
-Basic implementation can be done like below code:
+You can simply use this plugin as follows:
 ```dart
 import 'package:animated_progress_bar/animated_progress_bar.dart';
 import 'package:flutter/material.dart';
