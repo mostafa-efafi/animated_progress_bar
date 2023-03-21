@@ -1,7 +1,6 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockAnimatedProgressBarPlatform with MockPlatformInterfaceMixin {
-  @override
   void main() {
     // final AnimatedProgressBarPlatform initialPlatform = AnimatedProgressBarPlatform.instance;
 
