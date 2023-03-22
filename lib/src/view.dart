@@ -24,6 +24,7 @@ class View extends StatelessWidget {
           child: Stack(
             alignment: Alignment.center,
             children: [
+              /// use [CustomPaint] for [Circle progressBar]
               CustomPaint(
                 painter: CircleShape(
                     color: color,
@@ -31,8 +32,10 @@ class View extends StatelessWidget {
                     style: style ?? PaintingStyle.stroke,
                     fraction: fraction,
                     staticFraction: staticFraction),
-                child: Expanded(child: Container()),
+                child: const SizedBox.expand(),
               ),
+
+              /// Text display of progress percentage
               Text(
                 '%${(fraction * 100).toStringAsFixed(0)}',
                 style: const TextStyle(
