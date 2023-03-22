@@ -34,12 +34,22 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Animated ProgressBar Example'),
         ),
         body: const SizedBox(
+
+                      /// set the [width] and [height] of the displayable area
                       height: 150,
                       width: 150,
                       child: AnimatedProgressBar(
-                        stroke: 7,
-                        color: Colors.cyan,
+                        /// set [stroke]
+                        stroke: 20,
+
+                        /// set the [foreground color] of the progress bar
+                        color: Colors.purple,
+
+                        /// The progress bar style can be [stroke] or [fill]
                         style: PaintingStyle.stroke,
+
+                        /// Percentage progress is a number between [0] and [1], for example, to display [50] percent of the graph, this number must be [0.5].
+                        percentage: 1,
                       ))
       ),
     );

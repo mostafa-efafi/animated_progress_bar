@@ -2,10 +2,19 @@ import 'package:animated_progress_bar/src/view.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedProgressBar extends StatefulWidget {
+  /// set progress bar [stroke]
   final double? stroke;
+
+  /// The progress bar style can be [stroke] or [fill]
   final PaintingStyle? style;
+
+  /// Percentage progress is a number between [0] and [1], for example, to display [50] percent of the graph, this number must be [0.5].
+  final double percentage;
+
+  /// set the [foreground color] of the progress bar
   final Color? color;
-  const AnimatedProgressBar({Key? key, this.stroke, this.style, this.color})
+  const AnimatedProgressBar(
+      {Key? key, this.stroke, this.style, this.color, required this.percentage})
       : super(key: key);
 
   @override
@@ -14,10 +23,18 @@ class AnimatedProgressBar extends StatefulWidget {
 
 class _AnimatedProgressBarState extends State<AnimatedProgressBar>
     with TickerProviderStateMixin {
+  /// The [second progress], the percentage of which can be changed
   double _fraction = 0.0;
+
+  /// animation of [second progress]
   late Animation<double> animation;
+
+  /// The [first progress], the percentage of which cannot be changed and is completed up to 100% every time
   double _staticFraction = 0.0;
+
+  /// animation of [first progress]
   late Animation<double> staticAnimation;
+
   late AnimationController _staticController;
   late AnimationController _controller;
 
@@ -29,6 +46,7 @@ class _AnimatedProgressBarState extends State<AnimatedProgressBar>
 
   @override
   void dispose() {
+    /// disposed all AnimationControllers
     _fraction = 0.0;
     _staticFraction = 0.0;
     if (_staticController.isCompleted && _controller.isCompleted) {
@@ -40,7 +58,7 @@ class _AnimatedProgressBarState extends State<AnimatedProgressBar>
 
   /// [animation controller]  for second animation (real progress)
   AnimationController _initController2({double? progressVal}) {
-    double progressValue = progressVal ?? 1 /* ?? widget.progress.data! */;
+    double progressValue = widget.percentage;
     var controller =
         AnimationController(duration: const Duration(seconds: 2), vsync: this);
     animation = Tween(begin: 0.0, end: progressValue).animate(
@@ -69,6 +87,7 @@ class _AnimatedProgressBarState extends State<AnimatedProgressBar>
     return staticController;
   }
 
+  /// The start of the second animation one second after the first animation
   void _runAnimation() {
     _staticController = _initController1();
     _controller = _initController2(progressVal: 1);
