@@ -29,12 +29,22 @@ class _MyAppState extends State<MyApp> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: const [
                   SizedBox(
+
+                      /// set the [width] and [height] of the displayable area
                       height: 150,
                       width: 150,
                       child: AnimatedProgressBar(
+                        /// set progress bar [stroke]
                         stroke: 20,
+
+                        /// set the [foreground color] of the progress bar
                         color: Colors.purple,
+
+                        /// The progress bar style can be [stroke] or [fill]
                         style: PaintingStyle.stroke,
+
+                        /// Percentage progress is a number between [0] and [1], for example, to display [50] percent of the graph, this number must be [0.5].
+                        percentage: 1,
                       )),
                   SizedBox(
                       height: 150,
@@ -42,6 +52,7 @@ class _MyAppState extends State<MyApp> {
                       child: AnimatedProgressBar(
                         stroke: 12,
                         style: PaintingStyle.stroke,
+                        percentage: 0.8,
                       )),
                 ],
               ),
@@ -55,6 +66,7 @@ class _MyAppState extends State<MyApp> {
                         stroke: 7,
                         color: Colors.cyan,
                         style: PaintingStyle.stroke,
+                        percentage: 0.3,
                       )),
                   SizedBox(
                       height: 150,
@@ -62,6 +74,7 @@ class _MyAppState extends State<MyApp> {
                       child: AnimatedProgressBar(
                         color: Colors.orange,
                         style: PaintingStyle.fill,
+                        percentage: 0.1,
                       )),
                 ],
               )
