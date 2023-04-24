@@ -1,13 +1,13 @@
 import 'package:animated_progress_bar/src/paints/circle_shape.dart';
 import 'package:flutter/material.dart';
 
-class View extends StatelessWidget {
+class ViewState extends StatelessWidget {
   final double fraction;
   final double staticFraction;
   final double? stroke;
   final Color? color;
   final PaintingStyle? style;
-  const View(
+  const ViewState(
       {Key? key,
       required this.fraction,
       required this.staticFraction,

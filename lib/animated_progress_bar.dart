@@ -1,4 +1,4 @@
-import 'package:animated_progress_bar/src/view.dart';
+import 'package:animated_progress_bar/src/view_state.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedProgressBar extends StatefulWidget {
@@ -99,7 +99,7 @@ class _AnimatedProgressBarState extends State<AnimatedProgressBar>
 
   @override
   Widget build(BuildContext context) {
-    return View(
+    return ViewState(
       color: widget.color,
       style: widget.style,
       staticFraction: _staticFraction,
