@@ -20,14 +20,14 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Animated ProgressBar Example'),
         ),
-        body: Center(
+        body: const Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
+                children: [
                   SizedBox(
 
                       /// set the [width] and [height] of the displayable area
@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
+                children: [
                   SizedBox(
                       height: 150,
                       width: 150,

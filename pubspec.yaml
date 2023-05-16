@@ -1,10 +1,10 @@
 name: animated_progress_bar
 description: A Flutter plugin to show animated progress bar with customization styles.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/mostafa-efafi/animated_progress_bar
 
 environment:
-  sdk: '>=2.19.4 <3.0.0'
+  sdk: '>=2.19.4 <4.0.0'
   flutter: ">=2.5.0"
 
 dependencies:
